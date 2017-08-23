@@ -33,6 +33,7 @@ def next_ten_primes(n):
     """
     Return the list of the first ten prime numbers greate than or equal to n
     """
+    nxtprime=[]
     if n==2:
         nxtprime=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
     elif n < 1:
