@@ -34,8 +34,8 @@ def next_ten_primes(n):
     Return the list of the first ten prime numbers greate than or equal to n
     """
     if n==2:
-        nxtprime=[2, 3, 5, 7, 11, 13, 19, 23, 29, 31]
-    elseif n<1:
+        nxtprime=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+    elif n < 1:
         print "Input number is either negative or 0"
     else:
         nxtprime=[]
