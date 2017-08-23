@@ -1,13 +1,26 @@
 # Create a list with the first ten triangular numbers
 # (see https://oeis.org/A000217)
 
-L = [ for i in range(10)]
+L = [ i*(i+1)/2 for i in range(10)]
 
 # Create a function to test if a number is prime
 def is_prime(n):
     """
     Test if ``n`` is a prime.
     """
+    if n < 1:
+        return False 
+    elif n in [1,2]:
+        return True 
+    elif n%2==0:
+        return False 
+    else:
+        for i in range(3,int(n**0.5)+1,2):
+            if n%i==0:
+                return False 
+                break
+        else:
+            return True
 
 # Tests
 # is_prime(2033) == False
@@ -19,9 +32,16 @@ def is_prime(n):
 def next_ten_primes(n):
     """
     Return the list of the first ten prime numbers greate than or equal to n
-
-    
     """
+    nxtprime=[]
+    k=1
+    m=n
+    while k<=10:
+        if is_prime(m)== True:
+            nxtprime.append(m)
+            k+=1
+        m+=2
+    return nxtprime
 
 
 # Tests
