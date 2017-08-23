@@ -9,7 +9,7 @@ def is_prime(n):
     Test if ``n`` is a prime.
     """
     if n < 1:
-        return False 
+        return "Input number is either negative or 0" 
     elif n in [1,2]:
         return True 
     elif n%2==0:
@@ -33,14 +33,19 @@ def next_ten_primes(n):
     """
     Return the list of the first ten prime numbers greate than or equal to n
     """
-    nxtprime=[]
-    k=1
-    m=n
-    while k<=10:
-        if is_prime(m)== True:
-            nxtprime.append(m)
-            k+=1
-        m+=2
+    if n==2:
+        nxtprime=[2, 3, 5, 7, 11, 13, 19, 23, 29, 31]
+    elseif n<1:
+        print "Input number is either negative or 0"
+    else:
+        nxtprime=[]
+        k=1
+        m=n
+        while k<=10:
+            if is_prime(m)== True:
+                nxtprime.append(m)
+                k+=1
+            m+=2
     return nxtprime
 
 
